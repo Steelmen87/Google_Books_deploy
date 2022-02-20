@@ -1,0 +1,17 @@
+
+.jumbotron {
+    background-image: url("./library.png");
+    height:100px;
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+.text{
+    padding:20px;
+    color: #918f6e;
+}
+@media (max-width: 450px) {
+      .text > h1{
+          font-size:30px ;
+      }
+}
