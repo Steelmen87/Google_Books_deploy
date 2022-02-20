@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from "react";
-import Form from "../components/Form";
+
 import ResultsFunction from "../components/Results/indexResultFunction";
 import {useDispatch, useSelector} from "react-redux";
 import {GetBooks, GetBooksTotalItems} from "../reducers/SampleReducer";
+
+import MemoizedForm from "../components/Form";
 
 
 function SearchFunction() {
@@ -64,9 +66,11 @@ function SearchFunction() {
             .then(res => dispatch(res))
 
     }
+
     return (
         <div>
-            <Form
+
+            <MemoizedForm
                 search={state}
                 handleInputChange={handleInputChange}
                 handleFormSubmit={handleFormSubmit}
@@ -83,7 +87,7 @@ function SearchFunction() {
                 </div>
                 <ResultsFunction booksRedux={booksRedux}/>
                 {totalItems !== 0 &&
-                <button onClick={handleSetMax} className="btn btn-dark mt-3 mb-5"> Add more </button>}
+                    <button onClick={handleSetMax} className="btn btn-dark mt-3 mb-5"> Add more </button>}
             </div>
 
         </div>

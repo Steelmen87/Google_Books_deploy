@@ -6,11 +6,13 @@ import "./App.css";
 import SearchFunction from "./pages/SearchFunction";
 import Book from "./components/Book/Book";
 
+
 function App() {
     return (
         <Router>
             <div>
                 <Header/>
+
                 <Route exact path="/" component={SearchFunction}/>
                 <Route exact path="/search" component={SearchFunction}/>
                 <Route exact path="/noMatch" component={NoMatch}/>

@@ -1,14 +1,22 @@
-import React from "react";
+import React,{useMemo} from "react";
 import style from "./style.module.css"
 
-function Form(props) {
+const Form = ({
+                  setStartIndex,
+                  setValue,
+                  setSortBy,
+                  handleInputChange,
+                  search,
+                  handleFormSubmit,
+                  value, sortBy
+              }) => {
     const handleChange = (event) => {
-        props.setValue(event.target.value)
-        props.setStartIndex(0)
+        setValue(event.target.value)
+        setStartIndex(0)
     }
     const handleChangeSort = (event) => {
-        props.setSortBy(event.target.value)
-        props.setStartIndex(0)
+        setSortBy(event.target.value)
+        setStartIndex(0)
     }
 
     return (
@@ -16,22 +24,22 @@ function Form(props) {
             <form>
                 <div className="form-group">
                     <input
-                        onChange={props.handleInputChange}
-                        value={props.search}
+                        onChange={handleInputChange}
+                        value={search}
                         name="search"
                         type="text"
                         className="form-control"
                         placeholder="Search a Book"
                         id="search"
                     />
-                    <button onClick={props.handleFormSubmit} className="btn btn-dark mt-3 mb-5">
+                    <button onClick={handleFormSubmit} className="btn btn-dark mt-3 mb-5">
                         Search
                     </button>
                     <div className={style.containerFilter}>
                         <div className={style.item}>
                             <label>
                                 Categories:
-                                <select value={props.value} onChange={handleChange}>
+                                <select value={value} onChange={handleChange}>
                                     <option value="art|biography|computers|history|medical|poetry">all</option>
                                     <option value="art">art</option>
                                     <option value="biography">biography</option>
@@ -45,7 +53,7 @@ function Form(props) {
                         <div className={style.item}>
                             <label>
                                 Sorting by:
-                                <select value={props.sortBy} onChange={handleChangeSort}>
+                                <select value={sortBy} onChange={handleChangeSort}>
                                     <option value="relevance">relevance</option>
                                     <option value="newest">newest</option>
                                 </select>
@@ -57,5 +65,5 @@ function Form(props) {
         </div>
     );
 }
-
-export default Form;
+const MemoizedForm = React.memo(Form)
+export default MemoizedForm;
