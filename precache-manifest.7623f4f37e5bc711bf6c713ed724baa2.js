@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "dc13c2108dd0e9c65097",
-    "url": "/Google_Books_deploy/static/css/main.ca8b398f.chunk.css"
+    "revision": "000125373a400faacd69",
+    "url": "/Google_Books_deploy/static/css/main.94734ab0.chunk.css"
   },
   {
-    "revision": "dc13c2108dd0e9c65097",
-    "url": "/Google_Books_deploy/static/js/main.8b48f39c.chunk.js"
+    "revision": "000125373a400faacd69",
+    "url": "/Google_Books_deploy/static/js/main.3f468620.chunk.js"
   },
   {
     "revision": "56efffc36d76f04a597c",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/Google_Books_deploy/static/media/library.8b541139.png"
   },
   {
-    "revision": "bdc5671c3dc2adb81903c59aa3196df7",
+    "revision": "22f16fec7dffb9d005b25d50b7f0c613",
     "url": "/Google_Books_deploy/index.html"
   }
 ];
